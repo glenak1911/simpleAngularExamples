@@ -1,28 +1,24 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html data-ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Using AngularJS Directives and Data Binding</title>
   </head>
   <body>
+    <!--this specifies a controller, attached to a div in this case-->
     <div data-ng-controller="SimpleController">
       Name:
       <br />
+      <!--example of data binding.-->
       <input type="text" data-ng-model="name" />
       <br />
       <ul>
-        <li data-ng-repeat="cust in customers | filter:name | order:city">
+        <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">
+          {{cust.name}} - {{cust.city}}
+        </li>
       </ul>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <script>
-      function SimpleController($scope){
-        $scope.customers = [
-          {name:'John Smith', city:'Phoenix'},
-          {name:'John Doe', city:'New York'},
-          {name:'Jane Doe', city:'San Francisco'}
-        ];
-      }
-    </script>
+    <script src="js/controllers/simpleController.js"></script>
   </body>
 </html>
