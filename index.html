@@ -5,20 +5,10 @@
     <title>Using AngularJS Directives and Data Binding</title>
   </head>
   <body>
-    <!--this specifies a controller, attached to a div in this case-->
-    <div data-ng-controller="SimpleController">
-      Name:
-      <br />
-      <!--example of data binding.-->
-      <input type="text" data-ng-model="name" />
-      <br />
-      <ul>
-        <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">
-          {{cust.name}} - {{cust.city}}
-        </li>
-      </ul>
+    <div data-ng-view>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
     <script src="js/controllers/simpleController.js"></script>
   </body>
 </html>

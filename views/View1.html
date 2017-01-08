@@ -1,0 +1,21 @@
+<div dclass="container">
+  Name:
+  <br />
+  <!--example of data binding.-->
+  <input type="text" data-ng-model="name" />
+  <br />
+  <ul>
+    <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">
+      {{cust.name}} - {{cust.city}}
+    </li>
+  </ul>
+  <br />
+  Customer Name:<br />
+  <input type="text" data-ng-model="newCustomer.name" />
+  <br />
+  Customer City:<br />
+  <input type="text" data-ng-model="newCustomer.city" />
+  <br />
+  <button data-ng-click="addCustomer()">Add Customer</button>
+  <a href="#/view2">View 2</a>
+</div>
